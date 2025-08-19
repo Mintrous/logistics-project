@@ -1,0 +1,41 @@
+# ====================
+# Rails (logistics-rails)
+# ====================
+/logistics-rails/tmp
+/logistics-rails/log
+/logistics-rails/.byebug_history
+/logistics-rails/storage
+/logistics-rails/node_modules
+/logistics-rails/yarn-error.log
+/logistics-rails/public/packs
+/logistics-rails/public/packs-test
+/logistics-rails/public/assets
+
+# ====================
+# Haskell / Stack (route-optimizer)
+# ====================
+/route-optimizer/.stack-work
+/route-optimizer/dist
+/route-optimizer/*.o
+/route-optimizer/*.hi
+/route-optimizer/*.prof
+/route-optimizer/*.eventlog
+/route-optimizer/*.hi-boot
+/route-optimizer/.ghc.environment.* 
+
+# ====================
+# Editor / OS files
+# ====================
+*.swp
+*.swo
+*.swn
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.log
+
+# ====================
+# Bundler / Gems
+# ====================
+/logistics-rails/vendor/bundle

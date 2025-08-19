@@ -1,0 +1,41 @@
+=> 
+[[32m#<Delivery:0x00007f3d487eec58[0m
+  id: [34m[1m4[0m,
+  title: [31m[1m"[0m[31mEntrega 1[0m[31m[1m"[0m,
+  x: [35m[1m10.0[0m,
+  y: [35m[1m20.0[0m,
+  created_at: Tue, 19 Aug 2025 02:25:50.909405000 UTC +00:00,
+  updated_at: Tue, 19 Aug 2025 02:25:51.106679000 UTC +00:00,
+  position: [34m[1m1[0m[32m>[0m,
+ [32m#<Delivery:0x00007f3d487eeb18[0m
+  id: [34m[1m6[0m,
+  title: [31m[1m"[0m[31mEntrega 3[0m[31m[1m"[0m,
+  x: [35m[1m10.0[0m,
+  y: [35m[1m22.0[0m,
+  created_at: Tue, 19 Aug 2025 02:25:50.920269000 UTC +00:00,
+  updated_at: Tue, 19 Aug 2025 02:25:51.112141000 UTC +00:00,
+  position: [34m[1m2[0m[32m>[0m,
+ [32m#<Delivery:0x00007f3d487ee9d8[0m
+  id: [34m[1m8[0m,
+  title: [31m[1m"[0m[31mEntrega 5[0m[31m[1m"[0m,
+  x: [35m[1m1.0[0m,
+  y: [35m[1m12.0[0m,
+  created_at: Tue, 19 Aug 2025 02:25:50.930810000 UTC +00:00,
+  updated_at: Tue, 19 Aug 2025 02:25:51.117418000 UTC +00:00,
+  position: [34m[1m3[0m[32m>[0m,
+ [32m#<Delivery:0x00007f3d487ee898[0m
+  id: [34m[1m5[0m,
+  title: [31m[1m"[0m[31mEntrega 2[0m[31m[1m"[0m,
+  x: [35m[1m150.0[0m,
+  y: [35m[1m100.0[0m,
+  created_at: Tue, 19 Aug 2025 02:25:50.914794000 UTC +00:00,
+  updated_at: Tue, 19 Aug 2025 02:25:51.122453000 UTC +00:00,
+  position: [34m[1m4[0m[32m>[0m,
+ [32m#<Delivery:0x00007f3d487ee758[0m
+  id: [34m[1m7[0m,
+  title: [31m[1m"[0m[31mEntrega 4[0m[31m[1m"[0m,
+  x: [35m[1m300.0[0m,
+  y: [35m[1m301.0[0m,
+  created_at: Tue, 19 Aug 2025 02:25:50.924606000 UTC +00:00,
+  updated_at: Tue, 19 Aug 2025 02:25:51.127587000 UTC +00:00,
+  position: [34m[1m5[0m[32m>[0m]

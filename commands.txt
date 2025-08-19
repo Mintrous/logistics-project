@@ -1,0 +1,63 @@
+reset table:
+ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='deliveries';")
+
+reset database:
+bin/rails db:reset
+
+delete all deliveries:
+Delivery.delete_all
+
+create delivery:
+curl -X POST http://localhost:3000/deliveries \
+  -H "Content-Type: application/json" \
+  -d '{"delivery": {"title": "Entrega A", "x": 2, "y": 3}}'
+
+make run.sh executable:
+chmod +x run.sh
+
+test order delivery (local on Rails console)
+Delivery.order(:position).each do |d|
+  puts "#{d.position}: #{d.title} (#{d.x}, #{d.y})"
+end
+
+
+test order delivery (running Rails server)
+curl -X POST http://localhost:3000/routes/optimize
+
+script to delete all records, create records and calling the order service
+
+# === Script de teste de otimização de deliveries ===
+
+# 1️⃣ Delete all deliveries
+Delivery.delete_all
+
+# reset IDs counter:
+ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='deliveries';")
+
+# 2️⃣ Create the deliveries
+Delivery.create!(title: "Entrega 1", x: 10, y: 20)
+Delivery.create!(title: "Entrega 2", x: 150, y: 100)
+Delivery.create!(title: "Entrega 3", x: 10, y: 22)
+Delivery.create!(title: "Entrega 4", x: 300, y: 301)
+Delivery.create!(title: "Entrega 5", x: 1, y: 12)
+
+puts "Deliveries criados:"
+Delivery.all.each do |d|
+  puts "  ID=#{d.id} Title=#{d.title} X=#{d.x} Y=#{d.y}"
+end
+
+# 3️⃣ Prepare data for the optimizer
+addresses = Delivery.all.map { |d| { id: d.id, x: d.x, y: d.y } }
+
+# 4️⃣ Calling the haskell service
+optimized = Haskell::RouteOptimizerService.run(addresses)
+
+puts "\nSaída do RouteOptimizer:"
+puts optimized
+
+# 5️⃣ Update database position
+optimized_points = optimized["ordered_points"]
+optimized_points.each_with_index do |point, index|
+  delivery = Delivery.find(point["id"])
+  delivery.update!(position: index + 1)
+end
